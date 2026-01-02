@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1712110,
+        "name": "Siddhu Prodduturi",
+        "email": "siddhu@gmail.com",
+        "course": "LCDIA",
+        "year": 1
+    },
+    {
+        "id": 1712001,
+        "name": "Irene",
+        "email": "Irene@gmail.com",
+        "course": "LCDIA",
+        "year": 2
+    },
+    {
+        "id": 1712451,
+        "name": "Duarte Silva",
+        "email": "duarte.silva@gmail.com",
+        "course": "LEI",
+        "year": 1
+    },
+    {
+        "id": 1712783,
+        "name": "Goncalo Ferreira",
+        "email": "goncalo_ferreira@outlook.com",
+        "course": "LCDIA",
+        "year": 2
+    },
+    {
+        "id": 1712634,
+        "name": "Joel Martins",
+        "email": "joel.martins@gmail.com",
+        "course": "LEI",
+        "year": 3
+    },
+    {
+        "id": 1712992,
+        "name": "Victor Almeida",
+        "email": "victor.almeida@yahoo.com",
+        "course": "LCDIA",
+        "year": 1
+    },
+    {
+        "id": 1712548,
+        "name": "Ricardo Sousa",
+        "email": "ricardo.sousa@gmail.com",
+        "course": "LEI",
+        "year": 2
+    },
+    {
+        "id": 1712129,
+        "name": "Mayra Costa",
+        "email": "mayra.costa@icloud.com",
+        "course": "LCDIA",
+        "year": 3
+    },
+    {
+        "id": 1712874,
+        "name": "Manuel Rocha",
+        "email": "manuel.rocha@gmail.com",
+        "course": "LEI",
+        "year": 1
+    },
+    {
+        "id": 1712305,
+        "name": "Maria Santos",
+        "email": "maria.santos@hotmail.com",
+        "course": "LCDIA",
+        "year": 2
+    },
+    {
+        "id": 1712981,
+        "name": "Miguel Ribeiro",
+        "email": "miguel.ribeiro@gmail.com",
+        "course": "LEI",
+        "year": 3
+    },
+    {
+        "id": 1712147,
+        "name": "Ana Carvalho",
+        "email": "ana.carvalho@gmail.com",
+        "course": "LCDIA",
+        "year": 1
+    },
+    {
+        "id": 1712766,
+        "name": "Diogo Fonseca",
+        "email": "diogo.fonseca@outlook.com",
+        "course": "LEI",
+        "year": 2
+    },
+    {
+        "id": 1712559,
+        "name": "Ana Laura Correia",
+        "email": "laura.correia@gmail.com",
+        "course": "LCDIA",
+        "year": 1
+    },
+    {
+        "id": 1712433,
+        "name": "Carolina Mendes",
+        "email": "carolina.mendes@gmail.com",
+        "course": "LEI",
+        "year": 1
+    },
+    {
+        "id": 1712890,
+        "name": "Tiago Barros",
+        "email": "tiago.barros@yahoo.com",
+        "course": "LCDIA",
+        "year": 2
+    },
+    {
+        "id": 1712774,
+        "name": "Beatriz Nunes",
+        "email": "beatriz.nunes@gmail.com",
+        "course": "LEI",
+        "year": 3
+    },
+    {
+        "id": 1712999,
+        "name": "Joao costa",
+        "email": "joaocosta@yahoo.pt",
+        "course": "LEI",
+        "year": 2
+    }
+]

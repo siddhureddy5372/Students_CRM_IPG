@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniIntelligence | Student Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0b0f1a;
+            --card-bg: #161b2b;
+            --card-hover: #1e253a;
+            --border-color: #2d364f;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent-primary: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+        }
+
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar Visibility */
+        .navbar { 
+            background: rgba(11, 15, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+        }
+        .nav-link { color: var(--text-main) !important; font-weight: 600; margin-left: 20px; }
+        .nav-link:hover { color: var(--accent-primary) !important; }
+
+        /* Card Visibility Fixes */
+        .report-card, .consistent-card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 24px;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+        .report-card:hover { border-color: var(--accent-primary); transform: translateY(-5px); }
+
+        /* Global Text Fixes */
+        h1, h2, h3, h4, h5, strong { color: var(--text-main) !important; }
+        .text-muted, .text-dim, small { color: var(--text-dim) !important; }
+
+        /* Table Visibility Fixes for All Marks page */
+        .table { color: var(--text-main) !important; margin-top: 20px; border-color: var(--border-color); }
+        .table thead th { color: var(--accent-primary) !important; border-bottom: 2px solid var(--border-color); }
+        .table td { border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        
+        /* Modal Fix */
+        .modal-content { background: #111827; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 28px; }
+
+        .search-container { max-width: 600px; margin: 40px auto; position: relative; }
+        .search-input {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            color: white; padding: 15px 25px; border-radius: 12px; width: 100%;
+        }
+        .student-initials {
+            width: 48px; height: 48px; background: var(--accent-primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <div class="me-2" style="color: var(--accent-primary)">◈</div> 
+            <strong>UniIntelligence(IPG)</strong>
+        </a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Progress Reports</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="evaluations.html">All Marks</a>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+<h2>Active Projects</h2><div class='row'>
+        <div class="col-md-6"><div class="consistent-card">
+            <h4 style="color:var(--accent-primary) !important;">Erasmus Buddy</h4>
+            <p class="text-dim small">Projeto que visa facilitar a integração de estudantes internacionais através de um sistema de 'buddies' que promove a interação cultural e social.</p>
+            <div class="mb-2"><strong>Students:</strong> Siddhu Prodduturi, Ana Laura Correia</div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary)">INATIVO</span>
+                <small class="text-dim">Supervisor: Ana Carvalho</small>
+            </div>
+        </div></div>
+        <div class="col-md-6"><div class="consistent-card">
+            <h4 style="color:var(--accent-primary) !important;">ADT4Blue</h4>
+            <p class="text-dim small">Projeto que visa acelerar a digitalização e a sustentabilidade na economia azul, promovendo a adoção de Tecnologias Digitais Avançadas e o desenvolvimento de competências digitais entre estudantes, ex-alunos e empreendedores.</p>
+            <div class="mb-2"><strong>Students:</strong> Irene, Duarte Silva, Goncalo Ferreira</div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary)">ATIVO</span>
+                <small class="text-dim">Supervisor: Ana Carvalho</small>
+            </div>
+        </div></div>
+        <div class="col-md-6"><div class="consistent-card">
+            <h4 style="color:var(--accent-primary) !important;">Prevenção do Declínio Cognitivo em Idosos</h4>
+            <p class="text-dim small">Projeto de investigação científica dedicado ao estudo e desenvolvimento de estratégias para prevenir o declínio cognitivo na população idosa.</p>
+            <div class="mb-2"><strong>Students:</strong> Siddhu Prodduturi, Irene</div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary)">ATIVO</span>
+                <small class="text-dim">Supervisor: Ana Carvalho</small>
+            </div>
+        </div></div>
+        <div class="col-md-6"><div class="consistent-card">
+            <h4 style="color:var(--accent-primary) !important;">Frutos Vermelhos para a Prevenção Cardiovascular</h4>
+            <p class="text-dim small">Projeto que investiga o impacto do consumo de frutos vermelhos na prevenção de doenças cardiovasculares.</p>
+            <div class="mb-2"><strong>Students:</strong> Goncalo Ferreira, Joel Martins, Mayra Costa</div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary)">ATIVO</span>
+                <small class="text-dim">Supervisor: Diogo Fonseca</small>
+            </div>
+        </div></div>
+        <div class="col-md-6"><div class="consistent-card">
+            <h4 style="color:var(--accent-primary) !important;">Penso Inteligente para Feridas Crónicas</h4>
+            <p class="text-dim small">Projeto tecnológico focado no desenvolvimento de um penso inteligente capaz de monitorizar e apoiar o tratamento de feridas crónicas.</p>
+            <div class="mb-2"><strong>Students:</strong> Mayra Costa, Ricardo Sousa, Manuel Rocha</div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary)">ATIVO</span>
+                <small class="text-dim">Supervisor: Diogo Fonseca</small>
+            </div>
+        </div></div>
+        <div class="col-md-6"><div class="consistent-card">
+            <h4 style="color:var(--accent-primary) !important;">IPG@EMPREENDE+</h4>
+            <p class="text-dim small">Projeto que pretende estruturar competências na área do empreendedorismo, criando uma incubadora e um programa de aceleração para apoiar a criação de startups de base tecnológica na região.</p>
+            <div class="mb-2"><strong>Students:</strong> Diogo Fonseca, Victor Almeida, Miguel Ribeiro</div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary)">ATIVO</span>
+                <small class="text-dim">Supervisor: Diogo Fonseca</small>
+            </div>
+        </div></div></div>
+</div> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function filterStudents() {
+    let input = document.getElementById('studentSearch').value.toLowerCase();
+    let cards = document.getElementsByClassName('student-col');
+    for (let i = 0; i < cards.length; i++) {
+        let name = cards[i].getAttribute('data-name').toLowerCase();
+        cards[i].style.display = name.includes(input) ? "" : "none";
+    }
+}
+function showDetails(data) {
+    document.getElementById('m-name').innerText = data.name;
+    document.getElementById('m-pass').innerText = data.passRate + '%';
+    document.getElementById('m-best').innerText = data.best;
+    document.getElementById('m-worst').innerText = data.worst;
+    document.getElementById('m-const').innerText = data.consistency;
+    let pnl = document.getElementById('m-percentiles');
+    pnl.innerHTML = '';
+    data.subjects.forEach(s => {
+        pnl.innerHTML += `
+            <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="fw-bold">${s.name}</span>
+                    <span style="color: var(--accent-primary)">Top ${Math.round(100 - s.p)}%</span>
+                </div>
+                <div class="progress" style="background:#374151;height:8px;"><div class="progress-bar" style="width: ${s.p}%; background: var(--accent-primary)"></div></div>
+            </div>`;
+    });
+    new bootstrap.Modal(document.getElementById('studentModal')).show();
+}
+</script>
+</body></html>

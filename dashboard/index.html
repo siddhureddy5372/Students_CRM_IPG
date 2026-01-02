@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniIntelligence | Student Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0b0f1a;
+            --card-bg: #161b2b;
+            --card-hover: #1e253a;
+            --border-color: #2d364f;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent-primary: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+        }
+
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar Visibility */
+        .navbar { 
+            background: rgba(11, 15, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+        }
+        .nav-link { color: var(--text-main) !important; font-weight: 600; margin-left: 20px; }
+        .nav-link:hover { color: var(--accent-primary) !important; }
+
+        /* Card Visibility Fixes */
+        .report-card, .consistent-card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 24px;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+        .report-card:hover { border-color: var(--accent-primary); transform: translateY(-5px); }
+
+        /* Global Text Fixes */
+        h1, h2, h3, h4, h5, strong { color: var(--text-main) !important; }
+        .text-muted, .text-dim, small { color: var(--text-dim) !important; }
+
+        /* Table Visibility Fixes for All Marks page */
+        .table { color: var(--text-main) !important; margin-top: 20px; border-color: var(--border-color); }
+        .table thead th { color: var(--accent-primary) !important; border-bottom: 2px solid var(--border-color); }
+        .table td { border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        
+        /* Modal Fix */
+        .modal-content { background: #111827; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 28px; }
+
+        .search-container { max-width: 600px; margin: 40px auto; position: relative; }
+        .search-input {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            color: white; padding: 15px 25px; border-radius: 12px; width: 100%;
+        }
+        .student-initials {
+            width: 48px; height: 48px; background: var(--accent-primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <div class="me-2" style="color: var(--accent-primary)">◈</div> 
+            <strong>UniIntelligence(IPG)</strong>
+        </a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Progress Reports</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="evaluations.html">All Marks</a>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+<div class="search-container"><input type="text" id="studentSearch" class="search-input" placeholder="Search for a student..." onkeyup="filterStudents()"></div><div class="row" id="studentContainer">
+        <div class="col-md-6 student-col" data-name="Ana Carvalho">
+            <div class="report-card" onclick='showDetails({"name": "Ana Carvalho", "passRate": 100.0, "best": 11.5, "worst": 10.5, "consistency": 92.9, "subjects": [{"name": "Algorithms and data structures", "p": 20.0}, {"name": "Analysis and exploration of data", "p": 25.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">AC</div>
+                    <div><h4 class="mb-0">Ana Carvalho</h4><small class="text-dim">LCDIA • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 11.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Ana Laura Correia">
+            <div class="report-card" onclick='showDetails({"name": "Ana Laura Correia", "passRate": 100.0, "best": 13.5, "worst": 13.5, "consistency": "N/A", "subjects": [{"name": "Intorduction to Programming", "p": 44.44444444444444}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">AL</div>
+                    <div><h4 class="mb-0">Ana Laura Correia</h4><small class="text-dim">LCDIA • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 13.50</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Beatriz Nunes">
+            <div class="report-card" onclick='showDetails({"name": "Beatriz Nunes", "passRate": 100.0, "best": 18.5, "worst": 13.0, "consistency": 61.1, "subjects": [{"name": "Discrtete structures", "p": 85.71428571428571}, {"name": "Algorithms and data structures", "p": 50.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">BN</div>
+                    <div><h4 class="mb-0">Beatriz Nunes</h4><small class="text-dim">LEI • Year 3</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 15.75</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Carolina Mendes">
+            <div class="report-card" onclick='showDetails({"name": "Carolina Mendes", "passRate": 100.0, "best": 14.0, "worst": 12.0, "consistency": 85.9, "subjects": [{"name": "Algorithms and data structures", "p": 70.0}, {"name": "Algebra and Geometry", "p": 37.5}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">CM</div>
+                    <div><h4 class="mb-0">Carolina Mendes</h4><small class="text-dim">LEI • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 13.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Diogo Fonseca">
+            <div class="report-card" onclick='showDetails({"name": "Diogo Fonseca", "passRate": 100.0, "best": 18.0, "worst": 16.0, "consistency": 85.9, "subjects": [{"name": "Systems Design", "p": 62.5}, {"name": "Discrtete structures", "p": 42.857142857142854}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">DF</div>
+                    <div><h4 class="mb-0">Diogo Fonseca</h4><small class="text-dim">LEI • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 17.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Duarte Silva">
+            <div class="report-card" onclick='showDetails({"name": "Duarte Silva", "passRate": 100.0, "best": 17.5, "worst": 13.5, "consistency": 82.2, "subjects": [{"name": "Intorduction to Programming", "p": 77.77777777777779}, {"name": "Analysis and exploration of data", "p": 50.0}, {"name": "Algebra and Geometry", "p": 75.0}, {"name": "Systems Design", "p": 25.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">DS</div>
+                    <div><h4 class="mb-0">Duarte Silva</h4><small class="text-dim">LEI • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 15.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Goncalo Ferreira">
+            <div class="report-card" onclick='showDetails({"name": "Goncalo Ferreira", "passRate": 50.0, "best": 14.0, "worst": 7.0, "consistency": 68.4, "subjects": [{"name": "Algorithms and data structures", "p": 0.0}, {"name": "Systems Design", "p": 25.0}, {"name": "Discrtete structures", "p": 14.285714285714285}, {"name": "Algebra and Geometry", "p": 0.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">GF</div>
+                    <div><h4 class="mb-0">Goncalo Ferreira</h4><small class="text-dim">LCDIA • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 10.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Irene">
+            <div class="report-card" onclick='showDetails({"name": "Irene", "passRate": 75.0, "best": 12.0, "worst": 9.5, "consistency": 89.6, "subjects": [{"name": "Algorithms and data structures", "p": 30.0}, {"name": "Discrtete structures", "p": 0.0}, {"name": "Algebra and Geometry", "p": 12.5}, {"name": "Analysis and exploration of data", "p": 12.5}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">I</div>
+                    <div><h4 class="mb-0">Irene</h4><small class="text-dim">LCDIA • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 10.75</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Joao costa">
+            <div class="report-card" onclick='showDetails({"name": "Joao costa", "passRate": 0, "best": 0, "worst": 0, "consistency": "N/A", "subjects": []})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">Jc</div>
+                    <div><h4 class="mb-0">Joao costa</h4><small class="text-dim">LEI • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 0.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Joel Martins">
+            <div class="report-card" onclick='showDetails({"name": "Joel Martins", "passRate": 100.0, "best": 17.0, "worst": 15.5, "consistency": 93.5, "subjects": [{"name": "Discrtete structures", "p": 57.14285714285714}, {"name": "Algebra and Geometry", "p": 62.5}, {"name": "Algorithms and data structures", "p": 80.0}, {"name": "Intorduction to Programming", "p": 88.88888888888889}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">JM</div>
+                    <div><h4 class="mb-0">Joel Martins</h4><small class="text-dim">LEI • Year 3</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 16.25</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Manuel Rocha">
+            <div class="report-card" onclick='showDetails({"name": "Manuel Rocha", "passRate": 100.0, "best": 11.5, "worst": 10.0, "consistency": 92.4, "subjects": [{"name": "Intorduction to Programming", "p": 22.22222222222222}, {"name": "Systems Design", "p": 0.0}, {"name": "Algebra and Geometry", "p": 25.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">MR</div>
+                    <div><h4 class="mb-0">Manuel Rocha</h4><small class="text-dim">LEI • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 10.83</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Maria Santos">
+            <div class="report-card" onclick='showDetails({"name": "Maria Santos", "passRate": 100.0, "best": 14.5, "worst": 12.0, "consistency": 87.4, "subjects": [{"name": "Discrtete structures", "p": 28.57142857142857}, {"name": "Algorithms and data structures", "p": 30.0}, {"name": "Intorduction to Programming", "p": 33.33333333333333}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">MS</div>
+                    <div><h4 class="mb-0">Maria Santos</h4><small class="text-dim">LCDIA • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 13.17</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Mayra Costa">
+            <div class="report-card" onclick='showDetails({"name": "Mayra Costa", "passRate": 100.0, "best": 14.5, "worst": 12.0, "consistency": 89.2, "subjects": [{"name": "Algorithms and data structures", "p": 50.0}, {"name": "Algebra and Geometry", "p": 50.0}, {"name": "Intorduction to Programming", "p": 66.66666666666666}, {"name": "Analysis and exploration of data", "p": 37.5}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">MC</div>
+                    <div><h4 class="mb-0">Mayra Costa</h4><small class="text-dim">LCDIA • Year 3</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 13.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Miguel Ribeiro">
+            <div class="report-card" onclick='showDetails({"name": "Miguel Ribeiro", "passRate": 100.0, "best": 19.0, "worst": 16.0, "consistency": 78.8, "subjects": [{"name": "Analysis and exploration of data", "p": 62.5}, {"name": "Algebra and Geometry", "p": 87.5}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">MR</div>
+                    <div><h4 class="mb-0">Miguel Ribeiro</h4><small class="text-dim">LEI • Year 3</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 17.50</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Ricardo Sousa">
+            <div class="report-card" onclick='showDetails({"name": "Ricardo Sousa", "passRate": 100.0, "best": 19.5, "worst": 17.5, "consistency": 89.6, "subjects": [{"name": "Systems Design", "p": 75.0}, {"name": "Analysis and exploration of data", "p": 75.0}, {"name": "Discrtete structures", "p": 71.42857142857143}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">RS</div>
+                    <div><h4 class="mb-0">Ricardo Sousa</h4><small class="text-dim">LEI • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 18.33</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Siddhu Prodduturi">
+            <div class="report-card" onclick='showDetails({"name": "Siddhu Prodduturi", "passRate": 100.0, "best": 20.0, "worst": 14.0, "consistency": 73.4, "subjects": [{"name": "Algorithms and data structures", "p": 90.0}, {"name": "Intorduction to Programming", "p": 55.55555555555556}, {"name": "Analysis and exploration of data", "p": 87.5}, {"name": "Systems Design", "p": 87.5}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">SP</div>
+                    <div><h4 class="mb-0">Siddhu Prodduturi</h4><small class="text-dim">LCDIA • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 17.88</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Tiago Barros">
+            <div class="report-card" onclick='showDetails({"name": "Tiago Barros", "passRate": 50.0, "best": 15.0, "worst": 9.0, "consistency": 57.6, "subjects": [{"name": "Systems Design", "p": 50.0}, {"name": "Intorduction to Programming", "p": 0.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">TB</div>
+                    <div><h4 class="mb-0">Tiago Barros</h4><small class="text-dim">LCDIA • Year 2</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 12.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 student-col" data-name="Victor Almeida">
+            <div class="report-card" onclick='showDetails({"name": "Victor Almeida", "passRate": 50.0, "best": 13.0, "worst": 7.5, "consistency": 77.3, "subjects": [{"name": "Intorduction to Programming", "p": 11.11111111111111}, {"name": "Analysis and exploration of data", "p": 0.0}, {"name": "Systems Design", "p": 12.5}, {"name": "Algorithms and data structures", "p": 10.0}]})'>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="student-initials">VA</div>
+                    <div><h4 class="mb-0">Victor Almeida</h4><small class="text-dim">LCDIA • Year 1</small></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge" style="background:var(--accent-glow);color:var(--accent-primary);border:1px solid var(--accent-primary)">View Analytics</span>
+                    <span class="text-dim">Avg: 10.00</span>
+                </div>
+            </div>
+        </div></div>
+<div class="modal fade" id="studentModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header border-0">
+        <h2 class="fw-800" id="m-name"></h2>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3 mb-5">
+            <div class="col-md-3"><div class="consistent-card text-center p-3 m-0"><small class="text-dim d-block">Pass Rate</small><h4 id="m-pass" class="mb-0"></h4></div></div>
+            <div class="col-md-3"><div class="consistent-card text-center p-3 m-0"><small class="text-dim d-block">Best Mark</small><h4 id="m-best" class="mb-0"></h4></div></div>
+            <div class="col-md-3"><div class="consistent-card text-center p-3 m-0"><small class="text-dim d-block">Worst Mark</small><h4 id="m-worst" class="mb-0"></h4></div></div>
+            <div class="col-md-3"><div class="consistent-card text-center p-3 m-0"><small class="text-dim d-block">Reliability</small><h4 id="m-const" class="mb-0"></h4></div></div>
+        </div>
+        <h5>Subject Percentiles</h5>
+        <div id="m-percentiles" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function filterStudents() {
+    let input = document.getElementById('studentSearch').value.toLowerCase();
+    let cards = document.getElementsByClassName('student-col');
+    for (let i = 0; i < cards.length; i++) {
+        let name = cards[i].getAttribute('data-name').toLowerCase();
+        cards[i].style.display = name.includes(input) ? "" : "none";
+    }
+}
+function showDetails(data) {
+    document.getElementById('m-name').innerText = data.name;
+    document.getElementById('m-pass').innerText = data.passRate + '%';
+    document.getElementById('m-best').innerText = data.best;
+    document.getElementById('m-worst').innerText = data.worst;
+    document.getElementById('m-const').innerText = data.consistency;
+    let pnl = document.getElementById('m-percentiles');
+    pnl.innerHTML = '';
+    data.subjects.forEach(s => {
+        pnl.innerHTML += `
+            <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="fw-bold">${s.name}</span>
+                    <span style="color: var(--accent-primary)">Top ${Math.round(100 - s.p)}%</span>
+                </div>
+                <div class="progress" style="background:#374151;height:8px;"><div class="progress-bar" style="width: ${s.p}%; background: var(--accent-primary)"></div></div>
+            </div>`;
+    });
+    new bootstrap.Modal(document.getElementById('studentModal')).show();
+}
+</script>
+</body></html>

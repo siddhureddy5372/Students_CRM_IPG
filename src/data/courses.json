@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Algorithms and data structures",
+        "teacher_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Intorduction to Programming",
+        "teacher_id": 2
+    },
+    {
+        "id": 3,
+        "name": "Discrtete structures",
+        "teacher_id": 3
+    },
+    {
+        "id": 4,
+        "name": "Analysis and exploration of data",
+        "teacher_id": 4
+    },
+    {
+        "id": 5,
+        "name": "Algebra and Geometry",
+        "teacher_id": 5
+    },
+    {
+        "id": 6,
+        "name": "Systems Design",
+        "teacher_id": 1
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Paulo Nunes",
+        "email": "paulonunes@hotmail.com",
+        "department": "ESTG"
+    },
+    {
+        "id": 2,
+        "name": "Duarte Silva",
+        "email": "duarte.silva@gmail.com",
+        "department": "ESECD"
+    },
+    {
+        "id": 3,
+        "name": "Gonçalo Ferreira",
+        "email": "goncalo.ferreira@outlook.com",
+        "department": "ESSG"
+    },
+    {
+        "id": 4,
+        "name": "Joel Martins",
+        "email": "joel.martins@gmail.com",
+        "department": "ESTH"
+    },
+    {
+        "id": 5,
+        "name": "Victor Almeida",
+        "email": "victor.almeida@yahoo.com",
+        "department": "ESTG"
+    },
+    {
+        "id": 6,
+        "name": "Ricardo Sousa",
+        "email": "ricardo.sousa@gmail.com",
+        "department": "ESSG"
+    },
+    {
+        "id": 7,
+        "name": "Mayra Costa",
+        "email": "mayra.costa@icloud.com",
+        "department": "ESECD"
+    },
+    {
+        "id": 8,
+        "name": "Manuel Rocha",
+        "email": "manuel.rocha@gmail.com",
+        "department": "ESTH"
+    },
+    {
+        "id": 9,
+        "name": "Maria Santos",
+        "email": "maria.santos@hotmail.com",
+        "department": "ESTG"
+    },
+    {
+        "id": 10,
+        "name": "Miguel Ribeiro",
+        "email": "miguel.ribeiro@gmail.com",
+        "department": "ESSG"
+    },
+    {
+        "id": 11,
+        "name": "Ana Carvalho",
+        "email": "ana.carvalho@gmail.com",
+        "department": "ESECD"
+    },
+    {
+        "id": 12,
+        "name": "Diogo Fonseca",
+        "email": "diogo.fonseca@outlook.com",
+        "department": "ESTH"
+    },
+    {
+        "id": 13,
+        "name": "Daniel Correia",
+        "email": "daniel.correia@gmail.com",
+        "department": "ESTG"
+    },
+    {
+        "id": 14,
+        "name": "Carolina Mendes",
+        "email": "carolina.mendes@gmail.com",
+        "department": "ESSG"
+    },
+    {
+        "id": 15,
+        "name": "Tiago Barros",
+        "email": "tiago.barros@yahoo.com",
+        "department": "ESECD"
+    },
+    {
+        "id": 16,
+        "name": "Beatriz Nunes",
+        "email": "beatriz.nunes@gmail.com",
+        "department": "ESTH"
+    }
+]

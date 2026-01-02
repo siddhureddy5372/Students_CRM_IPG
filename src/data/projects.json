@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "title": "Erasmus Buddy",
+        "description": "Projeto que visa facilitar a integração de estudantes internacionais através de um sistema de 'buddies' que promove a interação cultural e social.",
+        "status": "INATIVO",
+        "supervisor_id": 11,
+        "student_ids": [
+            1712110,
+            1712559
+        ]
+    },
+    {
+        "id": 2,
+        "title": "ADT4Blue",
+        "description": "Projeto que visa acelerar a digitalização e a sustentabilidade na economia azul, promovendo a adoção de Tecnologias Digitais Avançadas e o desenvolvimento de competências digitais entre estudantes, ex-alunos e empreendedores.",
+        "status": "ATIVO",
+        "supervisor_id": 11,
+        "student_ids": [
+            1712001,
+            1712451,
+            1712783
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Prevenção do Declínio Cognitivo em Idosos",
+        "description": "Projeto de investigação científica dedicado ao estudo e desenvolvimento de estratégias para prevenir o declínio cognitivo na população idosa.",
+        "status": "ATIVO",
+        "supervisor_id": 11,
+        "student_ids": [
+            1712110,
+            1712001
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Frutos Vermelhos para a Prevenção Cardiovascular",
+        "description": "Projeto que investiga o impacto do consumo de frutos vermelhos na prevenção de doenças cardiovasculares.",
+        "status": "ATIVO",
+        "supervisor_id": 12,
+        "student_ids": [
+            1712783,
+            1712634,
+            1712129
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Penso Inteligente para Feridas Crónicas",
+        "description": "Projeto tecnológico focado no desenvolvimento de um penso inteligente capaz de monitorizar e apoiar o tratamento de feridas crónicas.",
+        "status": "ATIVO",
+        "supervisor_id": 12,
+        "student_ids": [
+            1712129,
+            1712548,
+            1712874
+        ]
+    },
+    {
+        "id": 6,
+        "title": "IPG@EMPREENDE+",
+        "description": "Projeto que pretende estruturar competências na área do empreendedorismo, criando uma incubadora e um programa de aceleração para apoiar a criação de startups de base tecnológica na região.",
+        "status": "ATIVO",
+        "supervisor_id": 12,
+        "student_ids": [
+            1712766,
+            1712992,
+            1712981
+        ]
+    }
+]
