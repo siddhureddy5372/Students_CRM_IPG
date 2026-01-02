@@ -31,6 +31,7 @@ The project operates through a dual-process workflow:
 ### 1. Data Management
 To update grades or add new students, run the CRM:
 ```bash
+cd src
 python main.py
 
 ```
